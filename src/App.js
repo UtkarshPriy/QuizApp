@@ -6,6 +6,7 @@ import { useEffect, useReducer, useState } from "react";
 import Loader from "./components/Loader";
 import ErrorPage from "./components/ErrorPage";
 import StartScreen from "./components/StartScreen";
+import Question from "./components/Question";
 
 const initialState = {
   questions: [],
@@ -20,15 +21,31 @@ function reducer(state, action) {
         questions: action.payload,
         status: "ready",
       };
+    case "startQuiz":
+      return {
+        ...state,
+        status: "active",
+        index: 0,
+      };
+    case "nextQ":
+      return {
+        ...state,
+        status: "active",
+        index: action.payload + 1,
+      };
     default:
       throw new Error("Unknown action");
   }
 }
 
 function App() {
-  const [{ status, questions }, dispatch] = useReducer(reducer, initialState);
+  const [{ status, questions, index }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
   const questionsNumbers = questions.length;
-  console.log(questionsNumbers);
+  console.log(questions[index]);
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -49,7 +66,14 @@ function App() {
         {status === "loading" && <Loader />}
         {status === "error" && <ErrorPage />}
         {status === "ready" && (
-          <StartScreen questionsNumber={questionsNumbers} />
+          <StartScreen questionsNumber={questionsNumbers} dispatch={dispatch} />
+        )}
+        {status === "active" && (
+          <Question
+            question={questions[index]}
+            dispatch={dispatch}
+            index={index}
+          />
         )}
       </main>
     </div>
