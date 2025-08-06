@@ -1,11 +1,23 @@
 import React from "react";
 
-export default function Option({ options }) {
+export default function Option({ options, dispatch, answer, correctOption }) {
   console.log(options);
+  const hasAnswered = answer !== undefined;
   return (
-    <div className=" btn-option">
-      {options.map((op) => (
-        <button className="btn btn-option" key={op}>
+    <div className="options">
+      {options.map((op, index) => (
+        <button
+          key={index}
+          className={
+            hasAnswered
+              ? `btn btn-option ${index === correctOption ? "answer" : ""} ${
+                  answer === correctOption ? "correct" : "wrong"
+                }`
+              : "btn btn-option"
+          }
+          onClick={() => dispatch({ type: "newAnswer", payload: index })}
+          disabled={hasAnswered}
+        >
           {op}
         </button>
       ))}
