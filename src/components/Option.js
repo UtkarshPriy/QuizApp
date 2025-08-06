@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function Option({ options, dispatch, answer, correctOption }) {
+export default function Option({
+  options,
+  dispatch,
+  answer,
+  correctOption,
+  points,
+}) {
   console.log(options);
   const hasAnswered = answer !== undefined;
   return (
@@ -15,7 +21,12 @@ export default function Option({ options, dispatch, answer, correctOption }) {
                 }`
               : "btn btn-option"
           }
-          onClick={() => dispatch({ type: "newAnswer", payload: index })}
+          onClick={() =>
+            dispatch({
+              type: "newAnswer",
+              payload: { answer: index, points: points },
+            })
+          }
           disabled={hasAnswered}
         >
           {op}

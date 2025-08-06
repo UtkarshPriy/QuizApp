@@ -1,8 +1,9 @@
 import React from "react";
 import Option from "./Option";
+import NextBtn from "./NextBtn";
 
 export default function Question({ question, dispatch, index, answer }) {
-  const { question: questionText, options, correctOption } = question;
+  const { question: questionText, options, correctOption, points } = question;
   return (
     <div className="question">
       <h2>{questionText}</h2>
@@ -12,16 +13,10 @@ export default function Question({ question, dispatch, index, answer }) {
         dispatch={dispatch}
         correctOption={correctOption}
         answer={answer}
-        index={index}
+        // index={index}
+        points={points}
       />
-      <button
-        onClick={() => {
-          dispatch({ type: "nextQ", payload: index });
-        }}
-        className="btn"
-      >
-        Next
-      </button>
+      <NextBtn index={index} dispatch={dispatch} />
     </div>
   );
 }

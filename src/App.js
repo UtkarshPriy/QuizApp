@@ -7,6 +7,7 @@ import Loader from "./components/Loader";
 import ErrorPage from "./components/ErrorPage";
 import StartScreen from "./components/StartScreen";
 import Question from "./components/Question";
+import Points from "./components/Points";
 
 const initialState = {
   questions: [],
@@ -26,17 +27,24 @@ function reducer(state, action) {
         ...state,
         status: "active",
         index: 0,
+        points: 0,
       };
     case "nextQ":
       return {
         ...state,
         status: "active",
         index: action.payload + 1,
+        answer: undefined,
       };
     case "newAnswer":
+      const isCorrectAnswered =
+        action.payload.answer === state.questions[state.index].correctOption;
       return {
         ...state,
-        answer: action.payload,
+        answer: action.payload.answer,
+        points: isCorrectAnswered
+          ? state.points + action.payload.points
+          : state.points,
       };
     default:
       throw new Error("Unknown action");
@@ -44,7 +52,7 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [{ status, questions, index, answer }, dispatch] = useReducer(
+  const [{ status, questions, index, answer, points }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -84,12 +92,15 @@ function App() {
           <StartScreen questionsNumber={questionsNumbers} dispatch={dispatch} />
         )}
         {status === "active" && (
-          <Question
-            question={questions[index]}
-            dispatch={dispatch}
-            index={index}
-            answer={answer}
-          />
+          <>
+            <Question
+              question={questions[index]}
+              dispatch={dispatch}
+              index={index}
+              answer={answer}
+            />
+            <Points points={points} />
+          </>
         )}
       </main>
     </div>
