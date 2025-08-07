@@ -14,7 +14,7 @@ This app helps users test their knowledge with multiple-choice questions, tracks
 - ✅ Responsive and styled using custom CSS
 - ✅ Feedback based on performance (with emoji 🏆🥇🤩🤦‍♂️)
 - ✅ Retry functionality
-
+- ✅ Timer
 ---
 
 ## 📸 Preview
