@@ -75,16 +75,21 @@ npm run build Build for production
 npm run test Run test suite
 npm run server Start mock backend (json-server)
 
+### 📁 Project Structure
+
+```
 QuizApp/
 ├── public/
 ├── src/
-│ ├── components/ # Reusable components (Question, Options, Header, etc.)
-│ ├── data/ # questions.json for mock API
-│ ├── App.js # Main component
-│ ├── index.css # Custom CSS styles
-│ └── ...
+│   ├── components/       # Reusable components (Question, Options, Header, etc.)
+│   ├── data/             # questions.json for mock API
+│   ├── App.js            # Main component
+│   ├── index.css         # Custom CSS styles
+│   └── ...
 ├── package.json
 └── README.md
+```
+
 
 ✨ Contribution
 Pull requests and suggestions are welcome!
