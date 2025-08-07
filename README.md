@@ -97,4 +97,5 @@ If you find a bug or want a new feature, feel free to open an issue.
 This project is licensed under the MIT License.
 
 🙋‍♂️ Author
-Made with ❤️ by Utkarsh Priy
+Made for fun by
+🔗 [Utkarsh Priy](https://github.com/UtkarshPriy)
