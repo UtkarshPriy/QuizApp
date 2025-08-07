@@ -82,12 +82,14 @@ QuizApp/
 ├── public/
 ├── src/
 │   ├── components/       # Reusable components (Question, Options, Header, etc.)
-│   ├── data/             # questions.json for mock API
 │   ├── App.js            # Main component
 │   ├── index.css         # Custom CSS styles
 │   └── ...
+├── data/                 # questions.json for mock API
+│   └── questions.json
 ├── package.json
 └── README.md
+
 ```
 
 
