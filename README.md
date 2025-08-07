@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# 🎯 QuizApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, interactive quiz application built with **React** and powered by **json-server** for a local mock backend.
 
-## Available Scripts
+This app helps users test their knowledge with multiple-choice questions, tracks their score, and displays performance using visual feedback and emoji-based scoring.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ✅ Dynamic question rendering
+- ✅ Scoring logic using `useReducer`
+- ✅ Local API using `json-server`
+- ✅ Responsive and styled using custom CSS
+- ✅ Feedback based on performance (with emoji 🏆🥇🤩🤦‍♂️)
+- ✅ Retry functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📸 Preview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![QuizApp Preview](screenshot.png) <!-- Add your own screenshot image here in the repo -->
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [React 19](https://reactjs.org/)
+- [json-server](https://github.com/typicode/json-server)
+- Vanilla CSS using custom design system
+- React DevTools for state debugging
+- React Testing Library (optional testing setup)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Installation & Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone the repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/UtkarshPriy/QuizApp.git
+cd QuizApp
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies
+   bash
+   Copy
+   Edit
+   npm install
+3. Start the mock API server
+   Make sure your quiz questions are located in data/questions.json.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash
+Copy
+Edit
+npm run server
+This runs json-server at:
+📍 http://localhost:8000/questions
 
-## Learn More
+4. Start the React app
+   In a new terminal window/tab:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy
+Edit
+npm start
+The app will be available at:
+📍 http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🧪 Scripts
+Script Purpose
+npm start Run React app in development
+npm run build Build for production
+npm run test Run test suite
+npm run server Start mock backend (json-server)
 
-### Code Splitting
+📁 Project Structure
+csharp
+Copy
+Edit
+QuizApp/
+├── public/
+├── src/
+│ ├── components/ # Reusable components (Question, Options, Header, etc.)
+│ ├── data/ # questions.json for mock API
+│ ├── App.js # Main component
+│ ├── index.css # Custom CSS styles
+│ └── ...
+├── package.json
+└── README.md
+✨ Contribution
+Pull requests and suggestions are welcome!
+If you find a bug or want a new feature, feel free to open an issue.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+📝 License
+This project is licensed under the MIT License.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🙋‍♂️ Author
+Made with ❤️ by Utkarsh Priy
