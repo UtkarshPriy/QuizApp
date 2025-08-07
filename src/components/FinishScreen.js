@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function FinishScreen({ points, outOfScore, dispatch }) {
-  const percentage = Number(points / outOfScore) * 100;
+export default function FinishScreen({ points, totalMarks, dispatch }) {
+  const percentage = Number(points / totalMarks) * 100;
   let emoji;
   if (percentage === 100) emoji = "";
   if (percentage >= 80 && percentage < 100) emoji = "🥇";
@@ -11,7 +11,7 @@ export default function FinishScreen({ points, outOfScore, dispatch }) {
   return (
     <>
       <p className="result">
-        Your Score:{points} Out of <strong>{outOfScore} </strong>(
+        Your Score:{points} Out of <strong>{totalMarks} </strong>(
         {percentage.toFixed(0)} % {emoji})
       </p>
     </>

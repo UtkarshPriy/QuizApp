@@ -11,10 +11,12 @@ import Progress from "./components/Progress";
 import NextBtn from "./components/NextBtn";
 import FinishScreen from "./components/FinishScreen";
 import Retry from "./components/Retry";
+import Timer from "./components/Timer";
 
 const initialState = {
   questions: [],
   status: "loading",
+  time: 600,
 };
 
 function reducer(state, action) {
@@ -52,17 +54,23 @@ function reducer(state, action) {
           ? state.points + action.payload.points
           : state.points,
       };
+    case "counter":
+      return { ...state, time: state.time - 1 };
     case "finish":
-      return { ...state, status: "finished" };
+      return { ...state, status: "finished", time: 600 };
     default:
       throw new Error("Unknown action");
   }
 }
 
 function App() {
-  const [{ status, questions, index, answer, points, outOfScore }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { status, questions, index, answer, points, outOfScore, time },
+    dispatch,
+  ] = useReducer(reducer, initialState);
   const questionsNumbers = questions.length;
+  const totalMarks = questions.reduce((acc, cur) => acc + cur.points, 0);
+  console.log(totalMarks);
   console.log(questions[index]);
 
   useEffect(() => {
@@ -116,13 +124,14 @@ function App() {
               questionsNumbers={questionsNumbers}
             />
             <Points points={points} outOfScore={outOfScore} />
+            <Timer dispatch={dispatch} time={time} />
           </>
         )}
         {status === "finished" && (
           <>
             <FinishScreen
               points={points}
-              outOfScore={outOfScore}
+              totalMarks={totalMarks}
               dispatch={dispatch}
             />
             <Retry dispatch={dispatch} />
