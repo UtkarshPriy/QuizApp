@@ -75,10 +75,6 @@ npm run build Build for production
 npm run test Run test suite
 npm run server Start mock backend (json-server)
 
-📁 Project Structure
-csharp
-Copy
-Edit
 QuizApp/
 ├── public/
 ├── src/
@@ -89,6 +85,7 @@ QuizApp/
 │ └── ...
 ├── package.json
 └── README.md
+
 ✨ Contribution
 Pull requests and suggestions are welcome!
 If you find a bug or want a new feature, feel free to open an issue.
