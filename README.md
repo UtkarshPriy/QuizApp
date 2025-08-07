@@ -20,7 +20,7 @@ This app helps users test their knowledge with multiple-choice questions, tracks
 ## 📸 Preview
 
 ![QuizApp Preview]
-![alt text](image.png)
+![alt text](image-1.png)
 
 ---
 
@@ -91,7 +91,6 @@ QuizApp/
 └── README.md
 
 ```
-
 
 ✨ Contribution
 Pull requests and suggestions are welcome!
