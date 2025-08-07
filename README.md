@@ -19,7 +19,8 @@ This app helps users test their knowledge with multiple-choice questions, tracks
 
 ## 📸 Preview
 
-![QuizApp Preview](screenshot.png) <!-- Add your own screenshot image here in the repo -->
+![QuizApp Preview]
+![alt text](image.png)
 
 ---
 
