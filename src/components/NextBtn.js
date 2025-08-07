@@ -1,14 +1,18 @@
 import React from "react";
 
-export default function NextBtn({ index, dispatch }) {
+export default function NextBtn({ index, dispatch, questionsNumbers }) {
+  const notLastQuestion = questionsNumbers !== index + 1;
   return (
     <button
       onClick={() => {
-        dispatch({ type: "nextQ", payload: index });
+        dispatch({
+          type: notLastQuestion ? "nextQ" : "finish",
+          payload: index,
+        });
       }}
       className="btn"
     >
-      Next
+      {notLastQuestion ? "Next" : "Finish"}
     </button>
   );
 }

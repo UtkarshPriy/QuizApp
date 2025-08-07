@@ -1,9 +1,15 @@
 import React from "react";
 import Option from "./Option";
-import NextBtn from "./NextBtn";
 
-export default function Question({ question, dispatch, index, answer }) {
+export default function Question({
+  question,
+  dispatch,
+  index,
+  answer,
+  questionsNumbers,
+}) {
   const { question: questionText, options, correctOption, points } = question;
+
   return (
     <div className="question">
       <h2>{questionText}</h2>
@@ -16,7 +22,6 @@ export default function Question({ question, dispatch, index, answer }) {
         // index={index}
         points={points}
       />
-      <NextBtn index={index} dispatch={dispatch} />
     </div>
   );
 }
